@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modern JavaScript Basics</title>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div id="output">
+            <div id=stats>
+                <div id="timer">Time: 0</div>
+                <div id="counter">Clicks: 0</div>
+                <div id="highscore">High Score: 0</div>
+            </div>
+
+            <div id="buttonWrapper">
+                <button id="button" onclick="buttonClicked()">10 Clicks To Win</button>
+            </div>
+        </div>
+
+        <div id="gameEndedWrapper" style="display: none;" onclick="restartGame()">
+            <div id="gameEnded">
+                Game Ended!
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="click-x-game.js"></script>
+
+</body>
+</html>
