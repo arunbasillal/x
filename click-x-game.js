@@ -8,14 +8,14 @@ const output = document.getElementById('output');
 const gameEndedWrapper = document.getElementById('gameEndedWrapper');
 const gameEnded = document.getElementById('gameEnded');
 
-let firstClick = false;
+let gameStart = false;
 let clickCount = 0;
 let timeElapsed = 0;
 let highScoreCount = 0;
 
 function buttonClicked() {
 
-    firstClick = true;
+    gameStart = true;
     button.textContent = 'x';
 
     button.style.marginLeft = Math.random() * 500;
@@ -28,7 +28,7 @@ function buttonClicked() {
 
 setInterval( () => {
 
-    if ( firstClick === false ) {
+    if ( gameStart === false ) {
         return; 
     }
 
@@ -37,7 +37,7 @@ setInterval( () => {
 
     if ( timeElapsed >= 50 ) {
         
-        firstClick = false;
+        gameStart = false;
         highScoreCount = clickCount > highScoreCount ? clickCount : highScoreCount;
 
         displayScores();
@@ -65,5 +65,5 @@ function restartGame() {
     counter.innerHTML = 'Clicks: ' + clickCount;
     timer.innerHTML = 'Time: ' + timeElapsed;
 
-    firstClick = false;
+    gameStart = false;
 }
